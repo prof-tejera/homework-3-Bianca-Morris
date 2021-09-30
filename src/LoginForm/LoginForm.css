@@ -8,12 +8,6 @@ form.form-login {
     flex-direction: column;
 }
 
-form.form-login>input {
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid transparent;
-}
-
 form.form-login>input.form-submit {
     background-color: honeydew;
     color: rgb(73, 158, 87);
