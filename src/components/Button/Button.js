@@ -9,8 +9,13 @@ class Button extends Component {
       disabled = false,
       onClick,
       value,
-      type = "button" } = this.props;
-    return <button className={"Default-button " + cls} {...{ disabled, onClick, type, value }}>{text}</button>;
+      type = "button",
+      color = "",
+      size = ""
+    } = this.props;
+
+    const fullCls = `Default-button ${cls} ${color} ${size}`;
+    return <button className={fullCls} {...{ disabled, onClick, type, value }}>{text}</button>;
   }
 }
 

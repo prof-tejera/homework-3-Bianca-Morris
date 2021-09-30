@@ -15,6 +15,22 @@
   color: black;
 }
 
+.Default-button.green,
+.Default-button.green.active {
+  background-color: green;
+  color: white;
+}
+
+.Default-button.red,
+.Default-button.red.active {
+  background-color: red;
+  color: white;
+}
+
+.Default-button.large {
+  font-size: larger;
+}
+
 .Default-button.active {
   background-color: rgb(0, 132, 255);
   color: white;
