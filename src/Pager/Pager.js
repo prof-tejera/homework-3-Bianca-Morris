@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './Pager.css';
+import Button from '../components/Button/Button.js';
 
 class Pager extends Component {
   constructor(props) {
@@ -28,10 +29,10 @@ class Pager extends Component {
 
     return (
       <div className="pager-wrapper">
-        <Arrow isForward disabled={pageIndex === 1} onClick={() => this.navigateToPage(1)}/>
-        { validPageBeforeCurrent ? <PagerButton onClick={() => this.navigateToPage(idxBeforeCurrent)} value={idxBeforeCurrent}>{1 + idxBeforeCurrent}</PagerButton>: null}
-        <PagerButton onClick={() => this.navigateToPage(pageIndex)} value={pageIndex} active disabled>{1 + pageIndex}</PagerButton>
-        { validPageAfterCurrent ? <PagerButton onClick={() => this.navigateToPage(1 + idxAfterCurrent)} value={1+ idxAfterCurrent}>{1 + idxAfterCurrent}</PagerButton>: null}
+        <Arrow isForward disabled={pageIndex === 1} onClick={() => this.navigateToPage(1)} cls="pager-button"/>
+        { validPageBeforeCurrent ? <Button onClick={() => this.navigateToPage(idxBeforeCurrent)} cls="pager-button" text={idxBeforeCurrent}/>: null}
+        <Button onClick={() => this.navigateToPage(pageIndex)} cls="pager-button active" value={pageIndex} active disabled text={pageIndex}/>
+        { validPageAfterCurrent ? <Button onClick={() => this.navigateToPage(1 + idxAfterCurrent)} cls="pager-button" text={idxAfterCurrent + 1}/>: null}
         <Arrow disabled={pageIndex === totalPages} onClick={() => this.navigateToPage(totalPages)}/>
       </div>
     );
@@ -41,7 +42,6 @@ Pager.defaultProps = {
   totalPages: 12 // Assuming this will be an integer, but not actually doing any checking.
 }
 
-const PagerButton = ({ value, disabled, active, onClick }) => (<button className={`pager-button ${active ? "active": ""}`}  {...{ disabled, onClick }}>{value}</button>);
-const Arrow = ({ isForward, disabled, onClick }) => (<PagerButton value={isForward ? "<" : ">"} {...{ disabled, onClick }}/>);
+const Arrow = ({ isForward, disabled, onClick }) => (<Button cls="pager-button" text={isForward ? "<" : ">"} {...{ disabled, onClick }}/>);
 
 export default Pager;
