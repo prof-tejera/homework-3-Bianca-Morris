@@ -10,6 +10,6 @@
   cursor: pointer;
 }
 
-.Default-button:active {
+.Default-button:active:not(:disabled) {
   background-color: #d0d0d0;
 }
