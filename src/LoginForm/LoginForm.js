@@ -24,15 +24,17 @@ class LoginForm extends Component {
   handleSubmit(e) {
     const { username } = this.state;
     alert(`Welcome, ${username}!`);
+    this.clearForm();
     e.preventDefault();
   }
 
   render() {
+    const { username = "", password = "" } = this.state;
     return (
-      <form onSubmit={(e) => this.handleSubmit(e)}>
-        <input type="text" name="username" onChange={(e) => this.onTextChange(e)}/>
-        <input type="password" name="password" onChange={(e) => this.onTextChange(e)}/>
-        <input type="submit" value="Login" />
+      <form className="form-login" onSubmit={(e) => this.handleSubmit(e)}>
+        <input type="text" name="username" value={username} placeholder="Username" onChange={(e) => this.onTextChange(e)}/>
+        <input type="password" name="password" value={password} placeholder="Password" onChange={(e) => this.onTextChange(e)}/>
+        <input className="form-submit" type="submit" value="Login" disabled={!username || !password} />
       </form>
     );
   }
