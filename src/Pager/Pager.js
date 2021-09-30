@@ -22,17 +22,17 @@ class Pager extends Component {
     if (totalPages <= 0) { return "Cannot create pager with no pages. Pass a valid integer for 'totalPages'."}
 
     const idxBeforeCurrent = pageIndex - 1;
-    const idxAfterCurrent = pageIndex + 1;
+    const idxAfterCurrent = pageIndex;
 
-    const validPageBeforeCurrent = idxBeforeCurrent >= 0;
-    const validPageAfterCurrent = idxAfterCurrent <= totalPages;
+    const validPageBeforeCurrent = idxBeforeCurrent >= 1;
+    const validPageAfterCurrent = idxAfterCurrent <= totalPages - 1;
 
     return (
-      <div>
-        <Arrow isForward disabled={pageIndex === 0} onClick={() => this.navigateToPage(0)}/>
-        { validPageBeforeCurrent ? <PagerButton onClick={() => this.navigateToPage(idxBeforeCurrent)} value={idxBeforeCurrent}>{idxBeforeCurrent}</PagerButton>: null}
-        <PagerButton onClick={() => this.navigateToPage(pageIndex)} value={pageIndex} active disabled>{pageIndex}</PagerButton>
-        { validPageAfterCurrent ? <PagerButton onClick={() => this.navigateToPage(idxAfterCurrent)} value={idxAfterCurrent}>{idxAfterCurrent}</PagerButton>: null}
+      <div className="pager-wrapper">
+        <Arrow isForward disabled={pageIndex === 1} onClick={() => this.navigateToPage(1)}/>
+        { validPageBeforeCurrent ? <PagerButton onClick={() => this.navigateToPage(idxBeforeCurrent)} value={idxBeforeCurrent}>{1 + idxBeforeCurrent}</PagerButton>: null}
+        <PagerButton onClick={() => this.navigateToPage(pageIndex)} value={pageIndex} active disabled>{1 + pageIndex}</PagerButton>
+        { validPageAfterCurrent ? <PagerButton onClick={() => this.navigateToPage(1 + idxAfterCurrent)} value={1+ idxAfterCurrent}>{1 + idxAfterCurrent}</PagerButton>: null}
         <Arrow disabled={pageIndex === totalPages} onClick={() => this.navigateToPage(totalPages)}/>
       </div>
     );
