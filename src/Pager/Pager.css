@@ -1,0 +1,19 @@
+.pager-button {
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 15%;
+    border: 1px solid white;
+}
+
+.pager-button.active:disabled {
+    background-color: rgb(0, 132, 255);
+    color: white;
+}
+
+.pager-button:hover:not(:disabled) {
+    background-color: rgb(221, 221, 221);
+}
+
+.pager-button:disabled:not(.active) {
+    cursor: not-allowed;
+}
