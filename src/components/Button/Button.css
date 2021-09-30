@@ -12,4 +12,19 @@
 
 .Default-button:active:not(:disabled) {
   background-color: #d0d0d0;
+  color: black;
+}
+
+.Default-button.active {
+  background-color: rgb(0, 132, 255);
+  color: white;
+}
+
+.Default-button:hover:not(:disabled) {
+  background-color: #ffffff;
+  color: black;
+}
+
+.Default-button:disabled:not(.active) {
+  cursor: not-allowed;
 }

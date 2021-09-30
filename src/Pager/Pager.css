@@ -5,16 +5,3 @@
     border: 1px solid #e3e3e3;
     margin-left: 5px;
 }
-
-.panel .pager-button.active:disabled {
-    background-color: rgb(0, 132, 255);
-    color: white;
-}
-
-.panel .pager-button:hover:not(:disabled) {
-    background-color: #ffffff;
-}
-
-.panel .pager-button:disabled:not(.active) {
-    cursor: not-allowed;
-}
