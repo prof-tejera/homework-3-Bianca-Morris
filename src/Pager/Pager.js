@@ -12,7 +12,6 @@ class Pager extends Component {
 
   navigateToPage(idx) {
     this.setState({ pageIndex: idx });
-    console.log("switching to index", idx);
   }
 
   render() {
@@ -39,7 +38,7 @@ class Pager extends Component {
   }
 }
 Pager.defaultProps = {
-  totalPages: 12 // Assuming this will be an integer, but not actually doing any checking here.
+  totalPages: 12 // Assuming this will be an integer, but not actually doing any checking.
 }
 
 const PagerButton = ({ value, disabled, active, onClick }) => (<button className={`pager-button ${active ? "active": ""}`}  {...{ disabled, onClick }}>{value}</button>);
