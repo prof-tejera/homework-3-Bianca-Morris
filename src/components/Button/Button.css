@@ -27,4 +27,5 @@
 
 .Default-button:disabled:not(.active) {
   cursor: not-allowed;
+  color: grey;
 }
