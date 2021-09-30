@@ -1,19 +1,28 @@
-.pager-button {
-    font-weight: 600;
-    padding: 5px;
-    border-radius: 15%;
-    border: 1px solid white;
+.pager-wrapper {
+    padding: 15px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    background-color: #e3e3e3;
 }
 
-.pager-button.active:disabled {
+.pager-wrapper .pager-button {
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 15%;
+    border: 1px solid #e3e3e3;
+    margin-left: 5px;
+}
+
+.pager-wrapper .pager-button.active:disabled {
     background-color: rgb(0, 132, 255);
     color: white;
 }
 
-.pager-button:hover:not(:disabled) {
-    background-color: rgb(221, 221, 221);
+.pager-wrapper .pager-button:hover:not(:disabled) {
+    background-color: #ffffff;
 }
 
-.pager-button:disabled:not(.active) {
+.pager-wrapper .pager-button:disabled:not(.active) {
     cursor: not-allowed;
 }
