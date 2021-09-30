@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './LoginForm.css';
 import Button from '../components/Button/Button.js';
+import Input from '../components/Input/Input.js';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -33,16 +34,12 @@ class LoginForm extends Component {
     const { username = "", password = "" } = this.state;
     return (
       <form className="form-login" onSubmit={(e) => this.handleSubmit(e)}>
-        <FormInput type="text" name="username" value={username} placeholder="Username" onChange={(e) => this.onTextChange(e)}/>
-        <FormInput type="password" name="password" value={password} placeholder="Password" onChange={(e) => this.onTextChange(e)}/>
+        <Input type="text" name="username" value={username} placeholder="Username" onChange={(e) => this.onTextChange(e)}/>
+        <Input type="password" name="password" value={password} placeholder="Password" onChange={(e) => this.onTextChange(e)}/>
         <Button cls="form-submit" text="Login" type="submit" disabled={!username || !password} />
       </form>
     );
   }
-}
-
-const FormInput = ({ onChange, type, placeholder, value, name }) => {
-  return <input {...{ onChange, type, placeholder, value, name }}/>
 }
 
 export default LoginForm;
