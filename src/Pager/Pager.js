@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './Pager.css';
+import Panel from '../components/Panel/Panel.js';
 import Button from '../components/Button/Button.js';
 
 class Pager extends Component {
@@ -28,13 +29,13 @@ class Pager extends Component {
     const validPageAfterCurrent = idxAfterCurrent <= totalPages - 1;
 
     return (
-      <div className="pager-wrapper">
+      <Panel>
         <Arrow isForward disabled={pageIndex === 1} onClick={() => this.navigateToPage(1)} cls="pager-button"/>
         { validPageBeforeCurrent ? <Button onClick={() => this.navigateToPage(idxBeforeCurrent)} cls="pager-button" text={idxBeforeCurrent}/>: null}
         <Button onClick={() => this.navigateToPage(pageIndex)} cls="pager-button active" value={pageIndex} active disabled text={pageIndex}/>
         { validPageAfterCurrent ? <Button onClick={() => this.navigateToPage(1 + idxAfterCurrent)} cls="pager-button" text={idxAfterCurrent + 1}/>: null}
         <Arrow disabled={pageIndex === totalPages} onClick={() => this.navigateToPage(totalPages)}/>
-      </div>
+      </Panel>
     );
   }
 }
