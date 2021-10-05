@@ -1,0 +1,25 @@
+form.form-login {
+    background-color: rgb(73, 158, 87);
+    height: 400px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form.form-login>button.form-submit {
+    background-color: honeydew;
+    color: rgb(73, 158, 87);
+    text-decoration: capitalize;
+    border-radius: 30px;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+form.form-login>button.form-submit:disabled {
+    background-color: lightgray;
+    color: grey;
+    cursor: not-allowed;
+}
+

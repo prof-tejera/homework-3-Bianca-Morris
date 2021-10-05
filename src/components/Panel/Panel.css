@@ -1,0 +1,6 @@
+.panel {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: #e3e3e3;
+}

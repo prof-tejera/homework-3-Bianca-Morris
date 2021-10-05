@@ -38,6 +38,11 @@ const SomeComponentThatUsesInput = () => {
 - Pager: If you have hardcoded a pager that works 1 to 10, then how might we modify it to be a bit more generic? What props can I pass in that will make the component more configurable?
 - Radio buttons: If you hardcoded "Apple", "Pear", and "Orange", then how might you modify it to take in an array of button configurations? What information might we need to determine if a button is active? 
 
+Did ya one better and implemented both of these. For the pager you can pass in a number of pages; don't know how realistic or useful that is, but it does (sort of) work.
+The radio buttons work by passing in an array of objects that contain a key (the text to put on the button), and the state of the button as the value (true = active, false = inactive, null = disabled).
+
+Sorry it's messy and for the lack of comments; when I started it I didn't realize it was all supposed to build off of these very generic components so I had to go back and rework a lot of things/didn't have time to do cleanup or attempt to optimize afterwards.
+
 ## How to run the project
 
 It is required that you have `node` and `npm` installed. In the project directory, you will run:
